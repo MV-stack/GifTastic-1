@@ -1,7 +1,14 @@
 $(document).ready(function() {
 
 var topics = ["Jon Snow", "Daenerys Targaryen", "Jaime Lannister", "Ned Stark", "Sansa Stark"]
+var theme = new Audio("assets/got-theme-song.mp3");
 //var giphyURL = "https://api.giphy.com/v1/gifs/trending?api_key=FksXZxJtNgMhBh9yoAtA6sJfP13eNyd4";
+
+	// MUSIC FUNCTION 
+
+	$("#title-button").on("click", function() {
+		theme.play();
+	});
 
 	// MAKE BUTTONS	AND ADD ONCLICK FUNCTION
 

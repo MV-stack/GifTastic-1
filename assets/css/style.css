@@ -1,5 +1,6 @@
 body {
 	background: url(../images/background.jpg);
+	background-position: 0px 400px;
 }
 
 .container {
@@ -29,6 +30,14 @@ body {
 	padding: 20px;
 }
 
+.gif-row {
+	margin-left: 5%;
+}
+
+#got-buttons {
+	margin-left: 5%;
+}
+
 /* JUMBOTRON ELEMENTS */
 
 #title {
@@ -46,5 +55,5 @@ body {
 #title-button {
 	text-align: center;
 	position: relative;
-	left: 45%;
+	left: 43%;
 }
