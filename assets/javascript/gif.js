@@ -65,7 +65,8 @@ var topics = ["Jon Snow", "Daenerys Targaryen", "Jaime Lannister", "Ned Stark", 
         	characterImage.attr("src", results[i].images.fixed_height.url);
 
         	characterDiv.append(para);
-          characterDiv.append(characterImage);
+          	characterDiv.append(characterImage);
+          	characterDiv.addClass("individual-gifs")
 
           $("#gifs").prepend(characterDiv);
 

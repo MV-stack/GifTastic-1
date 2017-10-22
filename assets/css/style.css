@@ -1,0 +1,50 @@
+body {
+	background: url(../images/background.jpg);
+}
+
+.container {
+	width: 80%;
+	position: absolute;
+	top: 500px;
+}
+
+.jumbotron {
+	background: url(../images/gameofthronescharacter.jpg) center center no-repeat;
+	height: 400px;
+}
+
+.individual-gifs {
+	float: left;
+	margin: 10px;
+}
+
+.intro {
+	display: block;
+	background-color: black;
+	color: white;
+	text-align: center;
+	width: 100%;
+	position: absolute;
+	top: 400px;
+	padding: 20px;
+}
+
+/* JUMBOTRON ELEMENTS */
+
+#title {
+	color: white;
+	text-align: center;
+	letter-spacing: 10px;
+	margin-top: 7%;
+}
+
+#title-description {
+	color: white;
+	text-align: center;
+}
+
+#title-button {
+	text-align: center;
+	position: relative;
+	left: 45%;
+}
