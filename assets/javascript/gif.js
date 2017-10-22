@@ -39,39 +39,39 @@ var topics = ["Jon Snow", "Daenerys Targaryen", "Jaime Lannister", "Ned Stark", 
 
 	//FUNCTION FOR GRABBING GIPHY API CONTENT
 
-    $("button").on("click", function() {
+  $("button").on("click", function() {
 
-   		var characterName = $(this).attr("data-name");
-   		var characterStr = characterName.split(" ").join("+");
-   		var giphyURL = "https://api.giphy.com/v1/gifs/search?q=" + characterStr + "&api_key=dc6zaTOxFJmzC&limit=10";
+ 		var characterName = $(this).attr("data-name");
+ 		var characterStr = characterName.split(" ").join("+");
+ 		var giphyURL = "https://api.giphy.com/v1/gifs/search?q=" + characterStr + "&api_key=dc6zaTOxFJmzC&limit=10";
 
-   		$.ajax({
-          url: giphyURL,
-          method: "GET"
-        }).done(function(response) {
-          
-          console.log(giphyURL);
-          console.log(response);
+ 		$.ajax({
+        url: giphyURL,
+        method: "GET"
+      }).done(function(response) {
+        
+        console.log(giphyURL);
+        console.log(response);
 
-          var results = response.data;
+        var results = response.data;
 
-          $("#gifs").empty();
-          for (var i = 0; i < results.length; i++) {
-          	
-          	var characterDiv = $("<div>");
-          	var para = $("<p>").text("Rating: " + results[i].rating);
-          	var characterImage = $("<img>");
+        $("#gifs").empty();
+        for (var i = 0; i < results.length; i++) {
+        	
+        	var characterDiv = $("<div>");
+        	var para = $("<p>").text("Rating: " + results[i].rating);
+        	var characterImage = $("<img>");
 
-          	characterImage.attr("src", results[i].images.fixed_height.url);
+        	characterImage.attr("src", results[i].images.fixed_height.url);
 
-          	characterDiv.append(para);
-            characterDiv.append(characterImage);
+        	characterDiv.append(para);
+          characterDiv.append(characterImage);
 
-            $("#gifs").prepend(characterDiv);
+          $("#gifs").prepend(characterDiv);
 
-          }; //ENDS FOR LOOP
-        }); // ENDS AJAX FUNCTION
-    }); // ENDS ON.CLICK
+        }; //ENDS FOR LOOP
+      }); // ENDS AJAX FUNCTION
+  }); // ENDS ON.CLICK
 
 
 }); //document.ready end
