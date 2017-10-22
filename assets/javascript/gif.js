@@ -1,17 +1,39 @@
+$(document).ready(function() {
+
 var topics = ["Jon Snow", "Daenerys Targaryen", "Jaime Lannister", "Ned Stark", "Sansa Stark"]
 
-function makeButtons() {
+	// MAKE BUTTONS	AND ADD ONCLICK FUNCTION
 
-	$(".got-buttons").empty();
+	function makeButtons() {
 
-	for (i = 0; i < topics.length; i++) {
-		
-		var b = $("<button>");
+		$("#got-buttons").empty();
 
-		b.addclass("character-btn");
-		b.attr("data-name", topics[i]);
-		b.text(topics[i]);
+		for (i = 0; i < topics.length; i++) {
+			
+			var b = $("<button>");
 
-		$(".got-buttons").append(b);
+			b.addClass("character-btn");
+			b.attr("data-name", topics[i]);
+			b.text(topics[i]);
+
+			$("#got-buttons").append(b);
+		};
 	};
-};
+
+	$("#add-character").on("click", function(event) {
+
+		event.preventDefault();
+
+		var character = $("#got-input").val().trim();
+
+		topics.push(character);
+
+		makeButtons();
+
+		console.log(topics);
+	});
+
+	makeButtons();
+
+}); //document.ready end
+
