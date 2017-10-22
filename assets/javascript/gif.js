@@ -28,6 +28,7 @@ var topics = ["Jon Snow", "Daenerys Targaryen", "Jaime Lannister", "Ned Stark", 
 		var character = $("#got-input").val().trim();
 
 		topics.push(character);
+		$("#got-input").val("");
 
 		makeButtons();
 
@@ -38,10 +39,11 @@ var topics = ["Jon Snow", "Daenerys Targaryen", "Jaime Lannister", "Ned Stark", 
 
 	//FUNCTION FOR GRABBING GIPHY API CONTENT
 
-     $("button").on("click", function() {
+    $("button").on("click", function() {
 
    		var characterName = $(this).attr("data-name");
-   		var giphyURL = "https://api.giphy.com/v1/gifs/search?q=" + characterName + "&api_key=dc6zaTOxFJmzC&limit=10";
+   		var characterStr = characterName.split(" ").join("+");
+   		var giphyURL = "https://api.giphy.com/v1/gifs/search?q=" + characterStr + "&api_key=dc6zaTOxFJmzC&limit=10";
 
    		$.ajax({
           url: giphyURL,
@@ -53,6 +55,7 @@ var topics = ["Jon Snow", "Daenerys Targaryen", "Jaime Lannister", "Ned Stark", 
 
           var results = response.data;
 
+          $("#gifs").empty();
           for (var i = 0; i < results.length; i++) {
           	
           	var characterDiv = $("<div>");
@@ -64,14 +67,11 @@ var topics = ["Jon Snow", "Daenerys Targaryen", "Jaime Lannister", "Ned Stark", 
           	characterDiv.append(para);
             characterDiv.append(characterImage);
 
-            //$("#gifs").prepend(characterDiv);
-
-            characterDiv.prependTo($("#gifs"));
+            $("#gifs").prepend(characterDiv);
 
           }; //ENDS FOR LOOP
         }); // ENDS AJAX FUNCTION
     }); // ENDS ON.CLICK
-
 
 
 }); //document.ready end
