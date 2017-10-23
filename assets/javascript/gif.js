@@ -2,12 +2,19 @@ $(document).ready(function() {
 
 var topics = ["Jon Snow", "Daenerys Targaryen", "Jaime Lannister", "Ned Stark", "Sansa Stark"]
 var theme = new Audio("assets/got-theme-song.mp3");
+var musicPlaying = false;
 //var giphyURL = "https://api.giphy.com/v1/gifs/trending?api_key=FksXZxJtNgMhBh9yoAtA6sJfP13eNyd4";
 
 	// MUSIC FUNCTION 
 
 	$("#title-button").on("click", function() {
-		theme.play();
+		if(musicPlaying == false){
+        	theme.play();
+        	musicPlaying = true;
+   		}else {
+        	theme.pause();
+        	musicPlaying = false;
+    	}
 	});
 
 	// MAKE BUTTONS	AND ADD ONCLICK FUNCTION
@@ -82,11 +89,11 @@ var theme = new Audio("assets/got-theme-song.mp3");
         }; //ENDS FOR LOOP
       }); // ENDS AJAX FUNCTION
   
-  //}); // ENDS ON.CLICK
+ 	 //}); // ENDS ON.CLICK
 	};
 
 	$(document).on("click", ".character-btn", dataPull);
-	
+
 }); //document.ready 
 
 
