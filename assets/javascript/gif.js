@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
-var topics = ["Jon Snow", "Daenerys Targaryen", "Jaime Lannister", "Ned Stark", "Sansa Stark"]
-var theme = new Audio("assets/got-theme-song.mp3");
+var topics = ["Jon Snow", "Daenerys Targaryen", "Jaime Lannister", "Ned Stark", "Sansa Stark", "Tyrion Lannister", "Samwell Tarly", "Bran Stark", "Hodor", "Drogo"]
+const theme = new Audio("assets/got-theme-song.mp3");
 var musicPlaying = false;
 //var giphyURL = "https://api.giphy.com/v1/gifs/trending?api_key=FksXZxJtNgMhBh9yoAtA6sJfP13eNyd4";
 
@@ -78,7 +78,11 @@ var musicPlaying = false;
         	var para = $("<p>").text("Rating: " + results[i].rating);
         	var characterImage = $("<img>");
 
-        	characterImage.attr("src", results[i].images.fixed_height.url);
+        	para.addClass("rating-text")
+        	characterImage.addClass("image-gifs")
+
+        	characterImage.attr("src", results[i].images.fixed_height_still.url);
+        	characterImage.attr("data-state", "still");
 
         	characterDiv.append(para);
           	characterDiv.append(characterImage);
@@ -93,6 +97,20 @@ var musicPlaying = false;
 	};
 
 	$(document).on("click", ".character-btn", dataPull);
+
+	// ANIMATE GIFS
+
+	$(".image-gifs").on("click", function () {
+      var state = $(this).attr("data-state");
+
+      if (state === "still") {
+        $(this).attr("src", $(this).attr(results[i].images.fixed_height.url));
+        $(this).attr("data-state", "animate");
+      } else {
+        $(this).attr("src", $(this).attr(results[i].images.fixed_height_still.url));
+        $(this).attr("data-state", "still");
+      }
+    });
 
 }); //document.ready 
 

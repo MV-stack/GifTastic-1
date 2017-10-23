@@ -1,6 +1,7 @@
 body {
 	background: url(../images/background.jpg);
 	background-position: 0px 400px;
+	background-size: 100% 350%;
 }
 
 .container {
@@ -31,12 +32,9 @@ body {
 	padding: 20px;
 }
 
-.gif-row {
-	margin-left: 5%;
-}
-
-#got-buttons {
-	width: 100%;
+.input-label {
+	font-size: 20px;
+	color: black;
 }
 
 .character-btn {
@@ -50,6 +48,29 @@ body {
 
 .character-btn:hover {
 	background-color: #7B2F2C;
+}
+
+.rating-text {
+	font-size: 20px;
+	color: black;
+	font-weight: bold;
+}
+
+#got-buttons {
+	width: 100%;
+}
+
+#add-character {
+	background-color: #37B7BF;
+	border: none;
+	color: white;
+	margin-top: 10px;
+	padding: 10px;
+	font-size: 18px;
+}
+
+#add-character:hover {
+	background-color: #375D75;
 }
 
 /* JUMBOTRON ELEMENTS */
