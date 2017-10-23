@@ -7,8 +7,9 @@ body {
 .container {
 	width: 80%;
 	position: absolute;
-	top: 500px;
+	top: 580px;
 	left: 10%;
+	padding-bottom: 90px;
 }
 
 .jumbotron {
@@ -29,7 +30,7 @@ body {
 	width: 100%;
 	position: absolute;
 	top: 400px;
-	padding: 20px;
+	padding: 30px;
 }
 
 .input-label {
@@ -56,6 +57,11 @@ body {
 	font-weight: bold;
 }
 
+.throne {
+	position: relative;
+	left: 0%;
+}
+
 #got-buttons {
 	width: 100%;
 }
@@ -71,6 +77,18 @@ body {
 
 #add-character:hover {
 	background-color: #375D75;
+}
+
+#sticky {
+   	position: fixed;    /*Here's what sticks it*/
+	bottom:0;          	/*to the bottom of the window*/
+	left:0;            /*and to the left of the window.*/
+	width: 100%;
+   	height: 60px;   /* Height of the footer */
+   	padding-top: 10px;
+   	background: #789198;
+   	text-align: center;
+   	color: white;
 }
 
 /* JUMBOTRON ELEMENTS */
