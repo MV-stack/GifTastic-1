@@ -46,7 +46,9 @@ var theme = new Audio("assets/got-theme-song.mp3");
 
 	//FUNCTION FOR GRABBING GIPHY API CONTENT
 
-  $("button").on("click", function() {
+  //$("button").on("click", function() {
+
+  	function dataPull() {
 
  		var characterName = $(this).attr("data-name");
  		var characterStr = characterName.split(" ").join("+");
@@ -79,8 +81,13 @@ var theme = new Audio("assets/got-theme-song.mp3");
 
         }; //ENDS FOR LOOP
       }); // ENDS AJAX FUNCTION
-  }); // ENDS ON.CLICK
+  
+  //}); // ENDS ON.CLICK
+	};
+
+	$(document).on("click", ".character-btn", dataPull);
+	
+}); //document.ready 
 
 
-}); //document.ready end
 
