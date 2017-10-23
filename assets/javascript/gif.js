@@ -79,8 +79,8 @@ var musicPlaying = false;
         	var characterImage = $("<img>");
 
         	para.addClass("rating-text")
-        	characterImage.addClass("image-gifs")
-
+        	
+          characterImage.addClass("image-gifs")
         	characterImage.attr("src", results[i].images.fixed_height_still.url);
         	characterImage.attr("data-state", "still");
 
