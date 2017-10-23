@@ -7,6 +7,7 @@ body {
 	width: 80%;
 	position: absolute;
 	top: 500px;
+	left: 10%;
 }
 
 .jumbotron {
@@ -21,7 +22,7 @@ body {
 
 .intro {
 	display: block;
-	background-color: black;
+	background-color: #271416;
 	color: white;
 	text-align: center;
 	width: 100%;
@@ -35,7 +36,20 @@ body {
 }
 
 #got-buttons {
-	margin-left: 5%;
+	width: 100%;
+}
+
+.character-btn {
+	background-color: #D65947;
+	border-radius: 5px;
+	border: none;
+	padding: 10px 15px 10px 15px;
+	margin: 5px;
+	color: white;
+}
+
+.character-btn:hover {
+	background-color: #7B2F2C;
 }
 
 /* JUMBOTRON ELEMENTS */
@@ -56,4 +70,10 @@ body {
 	text-align: center;
 	position: relative;
 	left: 43%;
+	background-color: #37B7BF;
+	border: none;
+}
+
+#title-button:hover {
+	background-color: #375D75;
 }
