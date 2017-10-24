@@ -95,6 +95,8 @@ var results;
   
 	};
 
+  // Use document on click function to apply function for elements AFTER the page has loaded
+
 	$(document).on("click", ".character-btn", dataPull);
 
 	// ANIMATE GIFS
