@@ -103,8 +103,8 @@ var results;
 
     function gifAnimation() {
       var state = $(this).attr("data-state");
-      var position = $(this).attr("data-position");
-      position = parseInt(position);
+      var position = $(this).attr("data-position"); //will return a string
+      position = parseInt(position); //string to integer
 
       console.log(results[position].images.fixed_height.url);
       console.log(position);
