@@ -3,6 +3,7 @@ $(document).ready(function() {
 var topics = ["Jon Snow", "Daenerys Targaryen", "Jaime Lannister", "Ned Stark", "Sansa Stark", "Tyrion Lannister", "Samwell Tarly", "Bran Stark", "Hodor", "Drogo"]
 const theme = new Audio("assets/got-theme-song.mp3");
 var musicPlaying = false;
+var results;
 //var giphyURL = "https://api.giphy.com/v1/gifs/trending?api_key=FksXZxJtNgMhBh9yoAtA6sJfP13eNyd4";
 
 	// MUSIC FUNCTION 
@@ -53,8 +54,6 @@ var musicPlaying = false;
 
 	//FUNCTION FOR GRABBING GIPHY API CONTENT
 
-  //$("button").on("click", function() {
-
   	function dataPull() {
 
  		var characterName = $(this).attr("data-name");
@@ -69,7 +68,7 @@ var musicPlaying = false;
         console.log(giphyURL);
         console.log(response);
 
-        var results = response.data;
+        results = response.data;
 
         $("#gifs").empty();
         for (var i = 0; i < results.length; i++) {
@@ -83,34 +82,42 @@ var musicPlaying = false;
           characterImage.addClass("image-gifs")
         	characterImage.attr("src", results[i].images.fixed_height_still.url);
         	characterImage.attr("data-state", "still");
+          characterImage.attr("data-position", i);
 
         	characterDiv.append(para);
-          	characterDiv.append(characterImage);
-          	characterDiv.addClass("individual-gifs")
+          characterDiv.append(characterImage);
+          characterDiv.addClass("individual-gifs")
 
           $("#gifs").prepend(characterDiv);
 
         }; //ENDS FOR LOOP
       }); // ENDS AJAX FUNCTION
   
- 	 //}); // ENDS ON.CLICK
 	};
 
 	$(document).on("click", ".character-btn", dataPull);
 
 	// ANIMATE GIFS
 
-	$(".image-gifs").on("click", function () {
+    function gifAnimation() {
       var state = $(this).attr("data-state");
+      var position = $(this).attr("data-position");
+      position = parseInt(position);
+
+      console.log(results[position].images.fixed_height.url);
+      console.log(position);
 
       if (state === "still") {
-        $(this).attr("src", $(this).attr(results[i].images.fixed_height.url));
+        console.log("we're here");
+        $(this).attr("src", results[position].images.fixed_height.url);
         $(this).attr("data-state", "animate");
       } else {
-        $(this).attr("src", $(this).attr(results[i].images.fixed_height_still.url));
+        $(this).attr("src", results[position].images.fixed_height_still.url);
         $(this).attr("data-state", "still");
       }
-    });
+    };
+
+  $(document).on("click", ".image-gifs", gifAnimation);
 
 }); //document.ready 
 
