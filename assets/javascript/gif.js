@@ -74,7 +74,7 @@ var results;
         for (var i = 0; i < results.length; i++) {
         	
         	var characterDiv = $("<div>");
-        	var para = $("<p>").text("Rating: " + results[i].rating);
+        	var para = $("<p class='rating'>").text("Rating: " + results[i].rating);
         	var characterImage = $("<img>");
 
         	para.addClass("rating-text")

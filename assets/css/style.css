@@ -26,6 +26,10 @@ body {
 	display: block;
 	background-color: #271416;
 	color: white;
+	font-family: 'Oxygen', sans-serif;
+	font-weight: 300;
+	font-size: 13px;
+	letter-spacing: 1.5px;
 	text-align: center;
 	width: 100%;
 	position: absolute;
@@ -64,15 +68,23 @@ body {
 
 #got-buttons {
 	width: 100%;
+	font-family: 'Oxygen', sans-serif;
+	font-weight: 400;
+	font-size: 15px;
+	letter-spacing: 2px;
 }
 
 #add-character {
 	background-color: #37B7BF;
 	border: none;
 	color: white;
-	margin-top: 10px;
+	margin-top: 14px;
 	padding: 10px;
 	font-size: 18px;
+	font-family: 'Oxygen', sans-serif;
+	font-weight: 700;
+	font-size: 16px;
+	letter-spacing: 1.5px;
 }
 
 #add-character:hover {
@@ -89,6 +101,16 @@ body {
    	background: #89A3B0;
    	text-align: center;
    	color: white;
+   	font-family: 'Oxygen', sans-serif;
+	font-weight: 300;
+	font-size: 13px;
+}
+
+.rating {
+	font-family: 'Oxygen', sans-serif;
+	font-weight: 700;
+	font-size: 18px;
+	letter-spacing: 1px;
 }
 
 /* JUMBOTRON ELEMENTS */
@@ -98,17 +120,25 @@ body {
 	text-align: center;
 	letter-spacing: 10px;
 	margin-top: 7%;
+	font-family: 'Lora', sans-serif;
 }
 
 #title-description {
 	color: white;
 	text-align: center;
+	font-family: 'Oxygen', sans-serif;
+	font-weight: 300;
+	letter-spacing: 1.5px;
 }
 
 #title-button {
 	text-align: center;
+	font-family: 'Oxygen', sans-serif;
+	font-weight: 700;
+	font-size: 16px;
+	letter-spacing: 1.5px;
 	position: relative;
-	left: 44%;
+	left: 43%;
 	background-color: #37B7BF;
 	border: none;
 }
