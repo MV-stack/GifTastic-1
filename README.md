@@ -16,4 +16,4 @@ Your character is not displayed? You can make your own button with your favorite
 
 Bonus! Press on 'The Full Experience' to play the theme song while you explore. Enjoy! 
 
-
+![Alt text](/assets/images/webimage.png)
